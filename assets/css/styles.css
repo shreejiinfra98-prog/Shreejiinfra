@@ -1,0 +1,354 @@
+/* ==========================================================================
+   SHREEJI INFRA - Civil & Industrial Construction Solutions
+   Theme, High-Contrast Hero & Interactive Cursor Effects
+   ========================================================================== */
+
+:root {
+  --color-primary: #0B1120;
+  --color-secondary: #0F172A;
+  --color-card: #1E293B;
+  --color-gold: #F59E0B;
+  --color-gold-light: #FBBF24;
+  --font-heading: 'Outfit', 'Montserrat', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Luminous Construction Gold for High Contrast Readability */
+.text-amber-glow {
+  color: #FBBF24;
+  text-shadow: 0 0 25px rgba(245, 158, 11, 0.7), 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+}
+
+.bg-gradient-gold:hover {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 50%, #B45309 100%);
+}
+
+/* ==========================================================================
+   HERO SECTION - PROPERLY BALANCED CONTRAST SO CONTENT IS 100% CLEAR
+   ========================================================================== */
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #0B1120;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Slightly dimmed brightness so content has razor-sharp contrast */
+  filter: brightness(0.55) contrast(1.15) saturate(1.05);
+  transform: scale(1.02);
+  transition: transform 6s ease;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Radial & Linear Overlay: Darker in center so headline text stands out boldly */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(11, 17, 32, 0.65) 0%,
+    rgba(11, 17, 32, 0.78) 60%,
+    rgba(6, 10, 20, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title-shadow {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.hero-subtext-shadow {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.98);
+}
+
+/* ==========================================================================
+   CUSTOM INTERACTIVE CURSOR (Construction Flame & Welding Follower)
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #FBBF24;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.9), 0 0 4px #FBBF24;
+    transition: opacity 0.2s ease, transform 0.05s ease;
+  }
+
+  .custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border: 2px solid rgba(245, 158, 11, 0.65);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.22s ease, height 0.22s ease, background 0.22s ease, border-color 0.22s ease, transform 0.08s ease-out;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+  }
+
+  /* When hovering over clickable elements */
+  .custom-cursor-follower.cursor-hover {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(245, 158, 11, 0.15);
+    border-color: #FBBF24;
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.6), 0 0 30px rgba(239, 68, 68, 0.25);
+  }
+
+  /* When clicking down */
+  .custom-cursor-follower.cursor-click {
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: rgba(245, 158, 11, 0.3);
+  }
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   PROVEN INDUSTRIAL CREDIBILITY - SPECIAL CARD HOVER ANIMATIONS
+   ========================================================================== */
+.industrial-card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, box-shadow, border-color;
+  border: 1px solid #E2E8F0;
+}
+
+.industrial-card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #F59E0B, #EF4444, #FBBF24);
+  border-radius: 4px 4px 0 0;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.industrial-card-hover:hover::before {
+  width: 100%;
+}
+
+.industrial-card-hover:hover {
+  transform: translateY(-9px) scale(1.02);
+  border-color: #F59E0B !important;
+  box-shadow: 0 22px 35px -8px rgba(245, 158, 11, 0.25), 0 10px 18px -4px rgba(15, 23, 42, 0.1);
+}
+
+.industrial-card-hover:hover .client-badge-tag {
+  background-color: #FEF3C7;
+  border-color: #F59E0B;
+  color: #B45309;
+  transform: scale(1.05);
+}
+
+.client-badge-tag {
+  transition: all 0.25s ease;
+}
+
+.industrial-card-hover:hover .industrial-icon-gear {
+  transform: rotate(45deg);
+}
+
+.industrial-icon-gear {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   GENERAL BOX HOVER ANIMATIONS
+   ========================================================================== */
+.card-hover-effect {
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, box-shadow, border-color;
+  position: relative;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 22px 35px -10px rgba(245, 158, 11, 0.22), 0 12px 18px -6px rgba(0, 0, 0, 0.12);
+  border-color: rgba(245, 158, 11, 0.8) !important;
+}
+
+.card-hover-effect img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-hover-effect:hover img {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   CONSTRUCTION FIRE / WELDING SPARK ARROW ANIMATION
+   ========================================================================== */
+.fire-arrow-group {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.fire-arrow {
+  display: inline-block;
+  margin-left: 0.35rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+.fire-spark {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  margin-left: 0.25rem;
+  font-size: 0.9em;
+  filter: drop-shadow(0 0 6px #F59E0B) drop-shadow(0 0 10px #EF4444);
+}
+
+.fire-arrow-group:hover .fire-arrow,
+.card-hover-effect:hover .fire-arrow,
+.industrial-card-hover:hover .fire-arrow,
+a:hover .fire-arrow,
+button:hover .fire-arrow {
+  transform: translateX(7px) scale(1.15);
+  animation: welding-spark 1.4s infinite alternate ease-in-out;
+}
+
+.fire-arrow-group:hover .fire-spark,
+.card-hover-effect:hover .fire-spark,
+.industrial-card-hover:hover .fire-spark,
+a:hover .fire-spark,
+button:hover .fire-spark {
+  opacity: 1;
+  transform: scale(1.15);
+  animation: flame-pulse 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes welding-spark {
+  0% {
+    filter: drop-shadow(0 0 2px #F59E0B) drop-shadow(0 0 4px #EF4444);
+    transform: translateX(5px) scale(1.1);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #FBBF24) drop-shadow(0 0 14px #F97316) drop-shadow(0 0 20px #EF4444);
+    transform: translateX(8px) scale(1.22);
+  }
+  100% {
+    filter: drop-shadow(0 0 4px #F59E0B) drop-shadow(0 0 8px #EA580C);
+    transform: translateX(6px) scale(1.15);
+  }
+}
+
+@keyframes flame-pulse {
+  0% {
+    transform: scale(1) rotate(-4deg);
+    filter: drop-shadow(0 0 4px #F59E0B);
+  }
+  100% {
+    transform: scale(1.25) rotate(6deg);
+    filter: drop-shadow(0 0 12px #EF4444) drop-shadow(0 0 18px #F59E0B);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F59E0B;
+  border-radius: 4px;
+}
+
+/* WhatsApp Floating Button */
+.floating-action-btn {
+  box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.4);
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.7);
+  }
+}
+
+/* ==========================================================================
+   MOBILE VIEW POLISH
+   ========================================================================== */
+@media (max-width: 640px) {
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .hero-content {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
