@@ -7,16 +7,23 @@ A high-performance, 100% humanized, SEO-optimized single-page website for **Shre
 
 ## 🏗️ Updates & Highlights
 
-1. **Clean, Non-Crowded Navigation Header**:
+1. **Pure Civil & Industrial Focus (Bungalows & Villas Content Removed)**:
+   - All residential bungalow and villa references replaced with **Structural Civil & Multi-Storey Framing**, **RCC Superstructures**, and **Civil Infrastructure**.
+   - Inquiry dropdown and schema updated to pure civil engineering categories.
+
+2. **100% Civil Construction Imagery**:
+   - Replaced residential photos with authentic civil engineering photography: high-rise concrete superstructures, tower cranes, RCC framing, and heavy foundations with zero-break `onerror` fallbacks.
+
+3. **6-Project Landmark Civil Portfolio**:
+   - Interactive category filtering between **All Projects**, **Civil & Structural**, **Commercial**, and **Industrial / RCC**.
+   - Showcases multi-storey civil frames, heavy industrial plinths, drainage culverts, and commercial plazas.
+
+4. **Clean, Non-Crowded Navigation Header**:
    - Spaced desktop menu links with zero overlapping.
    - Distinct action buttons: Direct Call (`9426606905`) + WhatsApp chat.
    - Full-featured mobile drawer menu with touch-friendly spacing.
 
-2. **Vibrant Hero Section with Visible Background Video**:
-   - Overlay transparency tuned so the background construction video & imagery is clearly visible and vivid.
-   - Text drop-shadows ensure crisp, immediate readability.
-
-3. **Major Corporate & Industrial Projects Section**:
+5. **Major Corporate & Industrial Projects Section**:
    - **Nayara Energy** (Refinery civil works, heavy foundations, Vadinar)
    - **Toyo Eng. Ind Pvt Ltd Projects** (EPC industrial plant civil infrastructure)
    - **Paharpur Cooling Tower LTD** (Water-retaining RCC basins & cooling tower plinths)
